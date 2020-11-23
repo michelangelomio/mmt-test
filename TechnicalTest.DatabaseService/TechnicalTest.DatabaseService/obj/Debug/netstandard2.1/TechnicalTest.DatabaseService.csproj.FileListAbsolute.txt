@@ -1,9 +1,0 @@
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\bin\Debug\netstandard2.1\TechnicalTest.DatabaseService.deps.json
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\bin\Debug\netstandard2.1\TechnicalTest.DatabaseService.dll
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\obj\Debug\netstandard2.1\TechnicalTest.DatabaseService.csprojAssemblyReference.cache
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\obj\Debug\netstandard2.1\TechnicalTest.DatabaseService.AssemblyInfoInputs.cache
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\obj\Debug\netstandard2.1\TechnicalTest.DatabaseService.AssemblyInfo.cs
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\bin\Debug\netstandard2.1\TechnicalTest.DatabaseService.pdb
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\obj\Debug\netstandard2.1\TechnicalTest.DatabaseService.csproj.CoreCompileInputs.cache
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\obj\Debug\netstandard2.1\TechnicalTest.DatabaseService.dll
-C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\obj\Debug\netstandard2.1\TechnicalTest.DatabaseService.pdb
