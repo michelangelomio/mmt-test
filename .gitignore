@@ -353,3 +353,7 @@ TechnicalTest.WebApi\src\Infrastructure\bin
 
 TechnicalTest.WebApi\src\WebApi\obj
 TechnicalTest.WebApi\src\WebApi\bin
+
+TechnicalTest.Database\.vs
+TechnicalTest.DatabaseService\.vs
+TechnicalTest.WebApi\.vs
