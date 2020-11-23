@@ -339,21 +339,25 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-TechnicalTest.Database\TechnicalTest.Database\obj
-TechnicalTest.Database\TechnicalTest.Database\bin
+TechnicalTest.Database/TechnicalTest.Database/obj
+TechnicalTest.Database/TechnicalTest.Database/bin
 
-TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\obj
-TechnicalTest.DatabaseService\TechnicalTest.DatabaseService\bin
+TechnicalTest.DatabaseService/TechnicalTest.DatabaseService/obj
+TechnicalTest.DatabaseService/TechnicalTest.DatabaseService/bin
 
-TechnicalTest.WebApi\src\Application\obj
-TechnicalTest.WebApi\src\Application\bin
+TechnicalTest.WebApi/src/Application/obj
+TechnicalTest.WebApi/src/Application/bin
 
-TechnicalTest.WebApi\src\Infrastructure\obj
-TechnicalTest.WebApi\src\Infrastructure\bin
+TechnicalTest.WebApi/src/Infrastructure/obj
+TechnicalTest.WebApi/src/Infrastructure/bin
 
-TechnicalTest.WebApi\src\WebApi\obj
-TechnicalTest.WebApi\src\WebApi\bin
+TechnicalTest.WebApi/src/WebApi/obj
+TechnicalTest.WebApi/src/WebApi/bin
 
-TechnicalTest.Database\.vs
-TechnicalTest.DatabaseService\.vs
-TechnicalTest.WebApi\.vs
+TechnicalTest.Database/.vs
+TechnicalTest.DatabaseService/.vs
+TechnicalTest.WebApi/.vs
+
+TechnicalTest.DatabaseService/.vs/TechnicalTest.DatabaseService/v16
+TechnicalTest.WebApi/src/Infrastructure/obj/Debug/netcoreapp3.1
+TechnicalTest.WebApi/src/WebApi/obj/Debug/netcoreapp3.1
