@@ -1,0 +1,8 @@
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\obj\Debug\netstandard2.1\Application.AssemblyInfoInputs.cache
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\obj\Debug\netstandard2.1\Application.AssemblyInfo.cs
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\bin\Debug\netstandard2.1\CleanArchitecture.Application.deps.json
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\bin\Debug\netstandard2.1\CleanArchitecture.Application.dll
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\bin\Debug\netstandard2.1\CleanArchitecture.Application.pdb
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\obj\Debug\netstandard2.1\CleanArchitecture.Application.dll
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\obj\Debug\netstandard2.1\CleanArchitecture.Application.pdb
+C:\Users\MilanKroupa\source\repos\MMT\TechnicalTest.WebApi\src\Application\obj\Debug\netstandard2.1\Application.csproj.CoreCompileInputs.cache

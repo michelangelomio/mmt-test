@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\MilanKroupa\\source\\repos\\MMT\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\MilanKroupa\\source\\repos\\MMT\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService.csproj": {
+      "version": "1.0.1",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MilanKroupa\\source\\repos\\MMT\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService.csproj",
+        "projectName": "TechnicalTest.DatabaseService.NugetPackage",
+        "projectPath": "C:\\Users\\MilanKroupa\\source\\repos\\MMT\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService.csproj",
+        "packagesPath": "C:\\Users\\MilanKroupa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MilanKroupa\\source\\repos\\MMT\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MilanKroupa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Users\\MilanKroupa\\.nuget\\packages": {},
+          "C:\\Users\\MilanKroupa\\source\\repos": {},
+          "C:\\Users\\MilanKroupa\\source\\repos\\MMT\\TechnicalTest.DatabaseService\\TechnicalTest.DatabaseService\\bin\\Debug": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dfe-ssp.pkgs.visualstudio.com/S143-Find-answers-to-enquiries/_packaging/Dfe.Fate/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/nimbusdti/3f8970dd-b35d-4dbd-bd83-e22f2d5c04e5/_packaging/Nimbus.DataArchivingPlatform/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "NETStandard.Library.Ref",
+              "version": "[2.1.0, 2.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
