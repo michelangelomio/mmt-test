@@ -1,6 +1,6 @@
-﻿namespace CleanArchitecture.Application.Product.Queries.GetFeaturedProductByProductId
+﻿namespace CleanArchitecture.Application.Product.Queries.GetProductBytId
 {
-    public class GetFeaturedProductByProductIdQueryLookupModel
+    public class GetProductByIdQueryLookupModel
     {
         public int ProductId { get; set; }
         public int CategoryId { get; set; }

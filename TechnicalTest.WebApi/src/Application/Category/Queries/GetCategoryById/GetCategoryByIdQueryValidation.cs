@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 
-namespace CleanArchitecture.Application.Category.Queries.GetCategory
+namespace CleanArchitecture.Application.Category.Queries.GetCategoryById
 {
-    public class GetCategoryQueryValidation : AbstractValidator<GetCategoryQuery>
+    public class GetCategoryByIdQueryValidation : AbstractValidator<GetCategoryByIdQuery>
     {
-        public GetCategoryQueryValidation()
+        public GetCategoryByIdQueryValidation()
         {
             RuleFor(x => x.CategoryId)
                 .NotNull()

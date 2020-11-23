@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using CleanArchitecture.Application.Category.Queries.GetCategory;
+using CleanArchitecture.Application.Category.Queries.GetCategoryById;
 using CleanArchitecture.Application.Category.Queries.GetCategoryList;
 using CleanArchitecture.Application.Common.Interfaces.Services;
 using Microsoft.EntityFrameworkCore;
@@ -19,14 +19,14 @@ namespace CleanArchitecture.Infrastructure.Services
             _context = context;
         }
 
-        public async Task<GetCategoryLookupModel> GetCategoryByIdAsync(int categoryId,
+        public async Task<GetCategoryByIdLookupModel> GetCategoryByIdAsync(int categoryId,
             CancellationToken cancellationToken)
         {
             var category = await _context
                 .Categories
                 .FirstOrDefaultAsync(x => x.CategoryId == categoryId && x.Deleted == false, cancellationToken);
 
-            return new GetCategoryLookupModel
+            return new GetCategoryByIdLookupModel
             {
                 CategoryId = category.CategoryId,
                 Name = category.Name

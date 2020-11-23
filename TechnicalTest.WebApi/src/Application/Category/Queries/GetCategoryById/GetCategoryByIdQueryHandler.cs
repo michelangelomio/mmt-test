@@ -3,19 +3,19 @@ using System.Threading.Tasks;
 using CleanArchitecture.Application.Common.Interfaces.Services;
 using MediatR;
 
-namespace CleanArchitecture.Application.Category.Queries.GetCategory
+namespace CleanArchitecture.Application.Category.Queries.GetCategoryById
 {
-    public class GetCategoryQueryHandler : IRequestHandler<GetCategoryQuery, GetCategoryLookupModel>
+    public class GetCategoryByIdQueryHandler : IRequestHandler<GetCategoryByIdQuery, GetCategoryByIdLookupModel>
     {
         private readonly ICategoryService _categoryService;
 
-        public GetCategoryQueryHandler(
+        public GetCategoryByIdQueryHandler(
             ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
 
-        public async Task<GetCategoryLookupModel> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
+        public async Task<GetCategoryByIdLookupModel> Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
         {
             return await _categoryService.GetCategoryByIdAsync(request.CategoryId, cancellationToken);
         }

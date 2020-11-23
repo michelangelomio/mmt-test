@@ -8,10 +8,10 @@ namespace CleanArchitecture.Application.Product.Queries.GetProductListByCategory
     {
         public GetProductListByCategoryIdReturnModel()
         {
-            FeaturedProducts = new List<GetProductListByCategoryIdQueryLookupModel>();
+            Products = new List<GetProductListByCategoryIdQueryLookupModel>();
         }
 
-        public List<GetProductListByCategoryIdQueryLookupModel> FeaturedProducts { get; set; }
+        public List<GetProductListByCategoryIdQueryLookupModel> Products { get; set; }
 
     }
 }

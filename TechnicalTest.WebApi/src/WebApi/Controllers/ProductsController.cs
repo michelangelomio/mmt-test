@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using CleanArchitecture.Application.Product.Queries.GetFeaturedProductByProductId;
+using CleanArchitecture.Application.Product.Queries.GetProductBytId;
 using CleanArchitecture.Application.Product.Queries.GetProductListByCategoryId;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +10,7 @@ namespace WebApi.Controllers
         [HttpGet("GetFeaturedProduct/{productId}")]
         public async Task<IActionResult> GetFeaturedProductByIdAsync(int productId)
         {
-            var result = await Mediator.Send(new GetFeaturedProductByProductIdQuery {ProductId = productId});
+            var result = await Mediator.Send(new GetProductByIdQuery {ProductId = productId});
 
             if (result == null) return BadRequest();
 

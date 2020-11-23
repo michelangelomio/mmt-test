@@ -19,7 +19,7 @@ namespace CleanArchitecture.Application.Product.Queries.GetProductListByCategory
         public async Task<GetProductListByCategoryIdReturnModel> Handle(GetProductListByCategoryIdQuery request,
             CancellationToken cancellationToken)
         {
-            return await _productService.GetAllFeaturedProductsByCategoryIdAsync(request.SelectedCategoryId, cancellationToken);
+            return await _productService.GetAllProductsByCategoryIdAsync(request.SelectedCategoryId, cancellationToken);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using CleanArchitecture.Application.Common.Interfaces.Services;
-using CleanArchitecture.Application.Product.Queries.GetFeaturedProductByProductId;
+using CleanArchitecture.Application.Product.Queries.GetProductBytId;
 using CleanArchitecture.Application.Product.Queries.GetProductListByCategoryId;
 using Microsoft.EntityFrameworkCore;
 using TechnicalTest.DatabaseService.Interface;
@@ -19,15 +19,13 @@ namespace CleanArchitecture.Infrastructure.Services
             _context = context;
         }
 
-        public async Task<GetFeaturedProductByProductIdQueryLookupModel> GetFeaturedProductByProductIdAsync(int productId, CancellationToken cancellationToken)
+        public async Task<GetProductByIdQueryLookupModel> GetProductByIdAsync(int productId, CancellationToken cancellationToken)
         {
-            var featuredProduct = await _context
-                .Products
-                .FirstOrDefaultAsync(x => x.ProductId == productId && x.FeaturedProduct, cancellationToken);
+            var featuredProduct = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == productId, cancellationToken);
 
             if (featuredProduct != null)
             {
-                return new GetFeaturedProductByProductIdQueryLookupModel
+                return new GetProductByIdQueryLookupModel
                 {
                     ProductId = featuredProduct.ProductId,
                     Description = featuredProduct.Description,
@@ -41,12 +39,12 @@ namespace CleanArchitecture.Infrastructure.Services
             return null;
         }
 
-        public async Task<GetProductListByCategoryIdReturnModel> GetAllFeaturedProductsByCategoryIdAsync(int categoryId, CancellationToken cancellationToken)
+        public async Task<GetProductListByCategoryIdReturnModel> GetAllProductsByCategoryIdAsync(int categoryId, CancellationToken cancellationToken)
         {
-            var featuredProducts = await _context
+            var products = await _context
                 .Products
                 .Include(x => x.Category)
-                .Where(x => x.CategoryId == categoryId && x.FeaturedProduct)
+                .Where(x => x.CategoryId == categoryId)
                 .Select(x => new GetProductListByCategoryIdQueryLookupModel
                 {
                     ProductId = x.ProductId,
@@ -58,7 +56,7 @@ namespace CleanArchitecture.Infrastructure.Services
 
             return new GetProductListByCategoryIdReturnModel
             {
-                FeaturedProducts = featuredProducts
+                Products = products
             };
         }
     }
