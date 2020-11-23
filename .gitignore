@@ -361,3 +361,5 @@ TechnicalTest.WebApi/.vs
 TechnicalTest.DatabaseService/.vs/TechnicalTest.DatabaseService/v16
 TechnicalTest.WebApi/src/Infrastructure/obj/Debug/netcoreapp3.1
 TechnicalTest.WebApi/src/WebApi/obj/Debug/netcoreapp3.1
+
+TechnicalTest.WebApi\.vs\CleanArchitecture\v16\.suo
