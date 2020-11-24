@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
 using CleanArchitecture.Infrastructure.Services;
@@ -81,7 +78,7 @@ namespace Services
 
             var service = new ProductService(context);
 
-            var result = await service.GetAllProductsByCategoryIdAsync(1,CancellationToken.None);
+            var result = await service.GetAllProductsByCategoryIdAsync(1, CancellationToken.None);
 
             Assert.That(result.Products.Count.Equals(2));
         }

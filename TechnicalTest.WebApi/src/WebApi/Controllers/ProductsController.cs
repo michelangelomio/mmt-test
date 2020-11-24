@@ -1,26 +1,32 @@
 ﻿using System.Threading.Tasks;
 using CleanArchitecture.Application.Product.Queries.GetProductBytId;
 using CleanArchitecture.Application.Product.Queries.GetProductListByCategoryId;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
-    public class ProductsController : MediatorController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ProductsController : ControllerBase
     {
-        [HttpGet("GetFeaturedProduct/{productId}")]
-        public async Task<IActionResult> GetFeaturedProductByIdAsync(int productId)
+        private readonly IMediator _mediator;
+
+        public ProductsController(IMediator mediator)
         {
-            var result = await Mediator.Send(new GetProductByIdQuery {ProductId = productId});
+            _mediator = mediator;
+        }
 
-            if (result == null) return BadRequest();
-
-            return Ok(result);
+        [HttpGet("GetFeaturedProduct/{productId}")]
+        public async Task<IActionResult> GetProductByIdAsync(int productId)
+        {
+            return Ok(await _mediator.Send(new GetProductByIdQuery {ProductId = productId}));
         }
 
         [HttpGet("GetAllFeaturedProducts/{categoryId}")]
-        public async Task<IActionResult> GetAllFeaturedProductsByCategoryIdAsync(int categoryId)
+        public async Task<IActionResult> GetAllProductsByCategoryIdAsync(int categoryId)
         {
-            return Ok(await Mediator.Send(new GetProductListByCategoryIdQuery {SelectedCategoryId = categoryId}));
+            return Ok(await _mediator.Send(new GetProductListByCategoryIdQuery {SelectedCategoryId = categoryId}));
         }
     }
 }
