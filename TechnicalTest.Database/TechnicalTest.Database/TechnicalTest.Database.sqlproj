@@ -77,7 +77,4 @@
     <Build Include="Repository\Stored Procedures\spProduct\spGetProductsByCategoryId.sql" />
     <Build Include="Repository\Stored Procedures\spProduct\spProduct.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="TechnicalTest.Database.refactorlog" />
-  </ItemGroup>
 </Project>
