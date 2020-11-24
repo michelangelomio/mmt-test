@@ -74,5 +74,6 @@
     <Build Include="Repository\Stored Procedures\spProduct.sql" />
     <Build Include="Repository\Stored Procedures\spGetProductById.sql" />
     <Build Include="Repository\Stored Procedures\spGetProductsByCategoryId.sql" />
+    <Build Include="Repository\Stored Procedures\spGetProducts.sql" />
   </ItemGroup>
 </Project>

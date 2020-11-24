@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [Repository].[spProduct]
+﻿/****** Object:  StoredProcedure [Repository].[spGetCategories]    Script Date: 24/11/2020 17:15:26 ******/
+CREATE PROCEDURE [Repository].[spProduct]
 	@CategoryName	varchar(50),
 	@Sku			int,
 	@Name			varchar(255),
