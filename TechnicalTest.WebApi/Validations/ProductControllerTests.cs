@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using CleanArchitecture.Application.Product.Queries.GetProductBytId;
+using CleanArchitecture.Application.Product.Queries.GetProductList;
 using CleanArchitecture.Application.Product.Queries.GetProductListByCategoryId;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -45,6 +46,20 @@ namespace Controllers
             var controller = new ProductsController(_mediatorMock.Object);
 
             var result = await controller.GetProductsByCategoryIdAsync(1) as OkObjectResult;
+
+            Assert.AreEqual(200, result.StatusCode);
+        }
+
+        [Test]
+        public async Task GetAllProducts_WhenCalled_ShouldReturnStatusCode200()
+        {
+            _mediatorMock
+                .Setup(x => x.Send(It.IsAny<GetProductListQuery>(), CancellationToken.None))
+                .ReturnsAsync(new GetProductListQueryReturnModel { Products = new List<GetProductListQueryLookupModel>() });
+
+            var controller = new ProductsController(_mediatorMock.Object);
+
+            var result = await controller.GetAllProducts() as OkObjectResult;
 
             Assert.AreEqual(200, result.StatusCode);
         }

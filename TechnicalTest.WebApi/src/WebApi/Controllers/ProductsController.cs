@@ -23,10 +23,16 @@ namespace WebApi.Controllers
             return Ok(await _mediator.Send(new GetProductByIdQuery {ProductId = productId}));
         }
 
-        [HttpGet("GetProducts/{categoryId}")]
+        [HttpGet("GetProductsByCategory/{categoryId}")]
         public async Task<IActionResult> GetProductsByCategoryIdAsync(int categoryId)
         {
             return Ok(await _mediator.Send(new GetProductListByCategoryIdQuery {SelectedCategoryId = categoryId}));
+        }
+
+        [HttpGet("GetProducts")]
+        public async Task<IActionResult> GetAllProducts()
+        {
+            return Ok(await _mediator.Send(new GetProductListByCategoryIdQuery()));
         }
     }
 }

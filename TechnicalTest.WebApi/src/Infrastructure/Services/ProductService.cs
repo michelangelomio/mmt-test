@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using CleanArchitecture.Application.Common.Interfaces.Services;
 using CleanArchitecture.Application.Product.Queries.GetProductBytId;
+using CleanArchitecture.Application.Product.Queries.GetProductList;
 using CleanArchitecture.Application.Product.Queries.GetProductListByCategoryId;
 using Microsoft.EntityFrameworkCore;
 using TechnicalTest.DatabaseService.Interface;
@@ -55,6 +56,26 @@ namespace CleanArchitecture.Infrastructure.Services
                 .ToListAsync(cancellationToken);
 
             return new GetProductListByCategoryIdReturnModel
+            {
+                Products = products
+            };
+        }
+
+        public async Task<GetProductListQueryReturnModel> GetAllProductsAsync(CancellationToken cancellationToken)
+        {
+            var products = await _context
+                .Products
+                .Include(x => x.Category)
+                .Select(x => new GetProductListQueryLookupModel
+                {
+                    ProductId = x.ProductId,
+                    Name = x.Name,
+                    Sku = x.Sku,
+                    CategoryName = x.Category.Name
+                })
+                .ToListAsync(cancellationToken);
+
+            return new GetProductListQueryReturnModel
             {
                 Products = products
             };

@@ -82,5 +82,26 @@ namespace Services
 
             Assert.That(result.Products.Count.Equals(2));
         }
+
+
+        [Test]
+        public async Task GetAllProductsAsync_WhenCalled_ReturnGetProductListQueryReturnModel()
+        {
+            var container = Registrations();
+
+            await using var scope = container.BeginLifetimeScope();
+
+            var options = scope.Resolve<DbContextOptions<TechnicalTestDbContext>>();
+
+            await using var context = new TechnicalTestDbContext(options);
+
+            await SeedMockDataAsync(context);
+
+            var service = new ProductService(context);
+
+            var result = await service.GetAllProductsAsync(CancellationToken.None);
+
+            Assert.That(result.Products.Count.Equals(3));
+        }
     }
 }

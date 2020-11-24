@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Autofac;
 using CleanArchitecture.Application.Common.Interfaces.Services;
 using CleanArchitecture.Application.Product.Queries.GetProductBytId;
+using CleanArchitecture.Application.Product.Queries.GetProductList;
 using CleanArchitecture.Application.Product.Queries.GetProductListByCategoryId;
 using Common.Tests.TestBase;
 using Microsoft.EntityFrameworkCore;
@@ -95,6 +96,52 @@ namespace Handler.Tests
             await SeedMockDataAsync(context);
 
             var handler = new GetProductListByCategoryIdQueryHandler(_productServiceMock.Object);
+
+            var result = await handler.Handle(query, CancellationToken.None);
+
+            Assert.AreEqual(2, result.Products.Count);
+            Assert.AreEqual("Product1", result.Products[0].Name);
+            Assert.AreEqual("Product2", result.Products[1].Name);
+        }
+
+
+        [Test]
+        public async Task GetProductListQueryHandler_WhenCalled_ReturnGetCategoryByIdLookupModel()
+        {
+            var returnModel = new GetProductListQueryReturnModel
+            {
+                Products = new List<GetProductListQueryLookupModel>
+                {
+                    new GetProductListQueryLookupModel
+                    {
+                        ProductId = 1,
+                        Name = "Product1"
+                    },
+                    new GetProductListQueryLookupModel
+                    {
+                        ProductId = 2,
+                        Name = "Product2"
+                    }
+                }
+            };
+
+            _productServiceMock
+                .Setup(x => x.GetAllProductsAsync(CancellationToken.None))
+                .ReturnsAsync(returnModel);
+
+            var query = new GetProductListQuery();
+
+            var container = Registrations();
+
+            await using var scope = container.BeginLifetimeScope();
+
+            var options = scope.Resolve<DbContextOptions<TechnicalTestDbContext>>();
+
+            await using var context = new TechnicalTestDbContext(options);
+
+            await SeedMockDataAsync(context);
+
+            var handler = new GetProductListQueryHandler(_productServiceMock.Object);
 
             var result = await handler.Handle(query, CancellationToken.None);
 
