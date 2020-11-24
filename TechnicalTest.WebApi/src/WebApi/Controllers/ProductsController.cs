@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using CleanArchitecture.Application.Product.Queries.GetProductBytId;
+using CleanArchitecture.Application.Product.Queries.GetProductList;
 using CleanArchitecture.Application.Product.Queries.GetProductListByCategoryId;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +33,7 @@ namespace WebApi.Controllers
         [HttpGet("GetProducts")]
         public async Task<IActionResult> GetAllProducts()
         {
-            return Ok(await _mediator.Send(new GetProductListByCategoryIdQuery()));
+            return Ok(await _mediator.Send(new GetProductListQuery()));
         }
     }
 }

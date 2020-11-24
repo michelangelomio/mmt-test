@@ -10,5 +10,7 @@ namespace CleanArchitecture.Application.Product.Queries.GetProductList
         public int Sku { get; set; }
         public string Name { get; set; }
         public string CategoryName { get; set; }
+        public decimal Price { get; set; }
+        public string Description { get; set; }
     }
 }

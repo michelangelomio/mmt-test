@@ -22,18 +22,18 @@ namespace CleanArchitecture.Infrastructure.Services
 
         public async Task<GetProductByIdQueryLookupModel> GetProductByIdAsync(int productId, CancellationToken cancellationToken)
         {
-            var featuredProduct = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == productId, cancellationToken);
+            var product = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == productId, cancellationToken);
 
-            if (featuredProduct != null)
+            if (product != null)
             {
                 return new GetProductByIdQueryLookupModel
                 {
-                    ProductId = featuredProduct.ProductId,
-                    Description = featuredProduct.Description,
-                    Name = featuredProduct.Name,
-                    Price = featuredProduct.Price,
-                    Sku = featuredProduct.Sku,
-                    CategoryId = featuredProduct.CategoryId
+                    ProductId = product.ProductId,
+                    Description = product.Description,
+                    Name = product.Name,
+                    Price = product.Price,
+                    Sku = product.Sku,
+                    CategoryId = product.CategoryId
                 };
             }
 
@@ -51,7 +51,9 @@ namespace CleanArchitecture.Infrastructure.Services
                     ProductId = x.ProductId,
                     Name = x.Name,
                     Sku = x.Sku,
-                    CategoryName = x.Category.Name
+                    CategoryName = x.Category.Name,
+                    Price = x.Price,
+                    Description = x.Description,
                 })
                 .ToListAsync(cancellationToken);
 
@@ -71,7 +73,9 @@ namespace CleanArchitecture.Infrastructure.Services
                     ProductId = x.ProductId,
                     Name = x.Name,
                     Sku = x.Sku,
-                    CategoryName = x.Category.Name
+                    CategoryName = x.Category.Name,
+                    Price = x.Price,
+                    Description = x.Description,
                 })
                 .ToListAsync(cancellationToken);
 
