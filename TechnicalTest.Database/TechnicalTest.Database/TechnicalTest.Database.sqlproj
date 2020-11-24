@@ -57,10 +57,12 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Repository" />
-    <Folder Include="Repository\Stored Procedures" />
     <Folder Include="Repository\Tables" />
     <Folder Include="Security" />
     <Folder Include="Scripts" />
+    <Folder Include="Repository\Stored Procedures" />
+    <Folder Include="Repository\Stored Procedures\spCategory" />
+    <Folder Include="Repository\Stored Procedures\spProduct" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Repository\Tables\Categories.sql" />
@@ -68,8 +70,12 @@
     <Build Include="Security\Repository.sql" />
     <None Include="Scripts\TechnicalTest.Database.Reseed.sql" />
     <None Include="Scripts\TechnicalTest.Database.Seed.sql" />
-    <Build Include="Repository\Stored Procedures\spCategory.sql" />
-    <Build Include="Repository\Stored Procedures\spProduct.sql" />
+    <Build Include="Repository\Stored Procedures\spCategory\spCategory.sql" />
+    <Build Include="Repository\Stored Procedures\spCategory\spGetCategories.sql" />
+    <Build Include="Repository\Stored Procedures\spCategory\spGetCategoryById.sql" />
+    <Build Include="Repository\Stored Procedures\spProduct\spGetProductById.sql" />
+    <Build Include="Repository\Stored Procedures\spProduct\spGetProductsByCategoryId.sql" />
+    <Build Include="Repository\Stored Procedures\spProduct\spProduct.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="TechnicalTest.Database.refactorlog" />
