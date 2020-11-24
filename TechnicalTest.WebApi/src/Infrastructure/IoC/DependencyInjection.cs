@@ -19,6 +19,7 @@ namespace CleanArchitecture.Infrastructure.IoC
 
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICheckDbService, CheckDbService>();
 
             return services;
         }

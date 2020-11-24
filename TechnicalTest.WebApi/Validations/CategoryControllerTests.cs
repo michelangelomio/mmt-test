@@ -45,7 +45,7 @@ namespace Controllers
 
             var controller = new CategoriesController(_mediatorMock.Object);
 
-            var result = await controller.GetAllCategoriesAsync() as OkObjectResult;
+            var result = await controller.GetCategoriesAsync() as OkObjectResult;
 
             Assert.AreEqual(200, result.StatusCode);
         }

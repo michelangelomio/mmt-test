@@ -44,7 +44,7 @@ namespace Controllers
 
             var controller = new ProductsController(_mediatorMock.Object);
 
-            var result = await controller.GetAllProductsByCategoryIdAsync(1) as OkObjectResult;
+            var result = await controller.GetProductsByCategoryIdAsync(1) as OkObjectResult;
 
             Assert.AreEqual(200, result.StatusCode);
         }

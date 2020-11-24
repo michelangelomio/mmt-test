@@ -17,14 +17,14 @@ namespace WebApi.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetFeaturedProduct/{productId}")]
+        [HttpGet("GetProduct/{productId}")]
         public async Task<IActionResult> GetProductByIdAsync(int productId)
         {
             return Ok(await _mediator.Send(new GetProductByIdQuery {ProductId = productId}));
         }
 
-        [HttpGet("GetAllFeaturedProducts/{categoryId}")]
-        public async Task<IActionResult> GetAllProductsByCategoryIdAsync(int categoryId)
+        [HttpGet("GetProducts/{categoryId}")]
+        public async Task<IActionResult> GetProductsByCategoryIdAsync(int categoryId)
         {
             return Ok(await _mediator.Send(new GetProductListByCategoryIdQuery {SelectedCategoryId = categoryId}));
         }

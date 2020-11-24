@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class CategoriesController  : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -21,8 +23,8 @@ namespace WebApi.Controllers
             return Ok(await _mediator.Send(new GetCategoryByIdQuery { CategoryId = categoryId }));
         }
 
-        [HttpGet("GetAllCategories")]
-        public async Task<IActionResult> GetAllCategoriesAsync()
+        [HttpGet("GetCategories")]
+        public async Task<IActionResult> GetCategoriesAsync()
         {
             return Ok(await _mediator.Send(new GetCategoryListQuery()));
         }
